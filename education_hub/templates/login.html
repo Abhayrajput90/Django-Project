@@ -1,0 +1,42 @@
+{% include "header.html" %}
+    <main class="login-body" data-vide-bg="/static/img/login-bg.mp4">
+        <!-- Login Admin -->
+        <form class="form-default" method="POST">
+            {% csrf_token %}
+            
+            <div class="login-form w-50">
+                <!-- logo-login -->
+                <div class="logo-login">
+                    <a href="index.html"><img src="/static/img/logo/loder.png" alt=""></a>
+                </div>
+                <h2>Login Here</h2>
+                <div class="form-input">
+                    <label for="name">Email</label>
+                    <input  type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-input">
+                    <label for="name">Password</label>
+                    <input type="password" name="password" placeholder="Password" required>
+                </div>
+                <div class="form-input">
+                    <select name="" class="mt-1 mb-3 d-flex" id="" required >
+                        <option >Select A option</option>
+                        <option >Teacher</option>
+                        <option >Student</option>
+                    </select>
+                </div>
+                <p class="text-danger">{{ message }}</p>
+                <div class="form-input pt-30">
+                    <input type="submit" name="submit" value="login">
+                </div>
+                
+                <!-- Forget Password -->
+                <a href="#" class="forget">Forget Password</a>
+                <!-- Forget Password -->
+                <a href="/register/" class="registration">Registration</a>
+            </div>
+        </form>
+        <!-- /end login form -->
+    </main>
+
+    {% include "footer.html" %}

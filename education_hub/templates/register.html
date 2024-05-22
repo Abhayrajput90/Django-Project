@@ -1,0 +1,52 @@
+{% include "header.html" %}
+
+
+<!-- Register -->
+
+<main class="login-body" data-vide-bg="assets/img/login-bg.mp4">
+    <!-- Login Admin -->
+    <form class="form-default" method="POST">
+        {% csrf_token %}
+        <div class="login-form">
+            <!-- logo-login -->
+            <div class="logo-login">
+                <a href="index.html"><img src="assets/img/logo/loder.png" alt=""></a>
+            </div>
+            <h2>Registration Here</h2>
+
+            <div class="form-input">
+                <label for="name">Full name</label>
+                <input  type="text" name="name" placeholder="Full name">
+            </div>
+            <div class="form-input">
+                <label for="name">Email Address</label>
+                <input type="email" name="email" placeholder="Email Address">
+            </div>
+            <div class="form-input">
+                <label for="name">Password</label>
+                <input type="password" name="Password" placeholder="Password">
+            </div>
+            <div class="form-input">
+                <label for="name">Confirm Password</label>
+                <input type="password" name="Cpassword" placeholder="Confirm Password">
+            </div>
+            <div class="form-input">
+                <select name="option" class="mt-1 mb-3 d-flex" id="" required >
+                    <option >Select A option</option>
+                    <option >Teacher</option>
+                    <option >Student</option>
+                </select>
+            </div>
+            <p class="text-danger">{{ error }}</p>
+            <div class="form-input pt-30">
+                <input type="submit" name="submit" value="Registration">
+            </div>
+            <!-- Forget Password -->
+            <a href="/login/" class="registration">login</a>
+        </div>
+    </form>
+    <!-- /end login form -->
+</main>
+
+
+{% include "footer.html" %}
